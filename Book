@@ -8,6 +8,6 @@ public void display(){
 System.out.println("Title:"+title" and the author "+author);
 }
 public static void main(String[] args) {
-Book a-new Book("It ends with us". "Colleen Hoover");
+Book a new Book("kabuliwala". "Rabindranath Tagore");
 a.display();
 }
