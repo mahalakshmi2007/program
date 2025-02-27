@@ -1,13 +1,18 @@
-class Book {
-String title;
-String author;
-public Book(String title, String author){
-this.title-title;
-this.author-author;
-public void display(){
-System.out.println("Title:"+title" and the author "+author);
-}
-public static void main(String[] args) {
-Book a new Book("kabuliwala". "Rabindranath Tagore");
-a.display();
+class Books {
+    String title;
+    String author;
+
+    public Books(String title, String author) {
+        this.title = title;
+        this.author = author;
+    }
+
+    public void display() {
+        System.out.println("Title: " + title + " and the author: " + author);
+    }
+
+    public static void main(String[] args) {
+        Books a = new Books("Kabuliwala", "Rabindranath Tagore");
+        a.display();
+    }
 }
