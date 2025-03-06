@@ -1,6 +1,0 @@
-1. next() method:
-Reads the next token: It reads input until it encounters a delimiter (usually whitespace, such as spaces, tabs, or newlines).
-Does not read the entire line: It only reads up to the first space, tab, or newline, then stops.
-2.nextLine() method:
-Reads the entire line: It reads everything from the current position of the scanner until it encounters a newline (\n) character.
-Includes spaces: It reads the whole line, including spaces between words.
