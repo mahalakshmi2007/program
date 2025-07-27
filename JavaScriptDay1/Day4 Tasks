@@ -1,0 +1,37 @@
+/**
+ * 1. Reverse words in a sentence (each word's characters reversed)
+ */
+function reverseWords(sentence) {
+  return sentence
+    .split(' ')
+    .map(word => word.split('').reverse().join(''))
+    .join(' ');
+}
+
+/**
+ * 2. Remove duplicates from an array (preserves original order)
+ */
+function removeDuplicates(arr) {
+  return [...new Set(arr)];
+}
+
+/**
+ * 3. Count vowels in a string (case-insensitive a, e, i, o, u)
+ */
+function countVowels(str) {
+  const matches = str.match(/[aeiou]/gi);
+  return matches ? matches.length : 0;
+}
+
+// Example usage:
+const sentence = "Hello World from JavaScript";
+console.log(reverseWords(sentence));
+// → "olleH dlroW morf tpircSavaJ"
+
+const nums = [1, 2, 2, 3, 4, 4, 5];
+console.log(removeDuplicates(nums));
+// → [1, 2, 3, 4, 5]
+
+const text = "Count the Vowels!";
+console.log(countVowels(text));
+// → 5
