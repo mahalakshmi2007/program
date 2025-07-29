@@ -1,0 +1,6 @@
+/**
+ * 2. Remove duplicates from an array (preserves original order)
+ */
+function removeDuplicates(arr) {
+  return [...new Set(arr)];
+}
