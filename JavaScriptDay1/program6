@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea name=""id="inputValue"cols="30"rows="10"></textarea>
+    <button onclick="TodoList()">Addtask</button>
+    <ul id="listContent"></ul>
+    <script>
+        function TodoList(){
+            let textValue=document.getElementById("inputValue").value.trim();
+            if(textValue===" ")
+                return;
+            let li=document.createElement("li");
+            li.textContent=textValue;
+            document.getElementById("listContent").appendChild(li);
+            let removeBtn=document.createElement("button");
+            removeBtn.textContent="remove";
+            removeBtn.addEventListener("click",function(e){
+                li.remove();
+            })
+            li.appendChild(removeBtn);
+        }
+    </script>
+</body>
+</html>
