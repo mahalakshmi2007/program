@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1.Quantifiers
+        //Definition:Quantifiers specify how many times a character or group should appear.
+        //*,+,?
+        //Eg:
+        let text="aaba";
+        let pattern=/\a*/g;
+        let pattern2=/\a+/g;
+        let pattern3=/\a?/g;
+        let result=text.match(pattern);
+        let result2=text.match(pattern2);
+        let result3=text.match(pattern3);
+        console.log(result)
+        console.log(result2)
+        console.log(result3)
+
+
+        //2.Modifiers
+        //Definition:Modifiers(flags)change how regex matches.
+        //common Modifiers:
+        //i->case sensitive
+        //g->global match(all occurences)
+        //m->multiline match
+        //Eg:
+        let sentence="Hai Hello\nHai,I'm Fine."
+        let pattern4=/^\Hai+/igm;
+        let result4=sentence.match(pattern4);
+        console.log(result4);
+
+
+        //3.Meta characters 
+        //Definition:Meta characters have special meaning in regex.
+        //common Meta characters:
+        //.->any character except newline
+        //\d->digit(0-9)
+        //\w->word character(letters,digits,_)
+        //\s->whitespace
+        //^->start of stringline
+        //$->end of stringline
+        //Eg:
+        let digitchar="Js001java";
+        let pattern5=/\w+\d+\w+/g;
+        let result5=digitchar.match(pattern5);
+        console.log(result5);
+
+
+        //4.Grouping
+        //Definition:Parentheses() are used to group patterns and capture submatches.
+        //Eg:
+        let username="javascript program";
+        let pattern6=/(\w+)/g;
+        let result6=username.match(pattern6);
+        console.log(result6);
+        console.log(result6[0]);
+        console.log(result6[1])
+
+        //5.Methods
+        //common regex methods in javascript:
+        //test()->returns true/false
+        //exec()->returns matched result with groups
+        //match()->returns array of matches
+        //replace()->replaces matches
+        //split()->splits string using regex
+        //Eg:test()
+        let lines="apple banana apple grape";
+        let pattern7=/apple/;
+        console.log(pattern7.test(lines));
+        //true (because "apple" exists in text)
+        //Eg:replace()
+        let str="mr bean has a green apple and a red apple";
+        let pattern8=/apple/ig;
+        let result8=str.replace(pattern8,"strawberries");
+        console.log(result8);
+        //Eg:split()
+        let str4 = "one   two    three";
+        let result9 = str4.split(/\s+/);
+        console.log(result9);
+</script>
+</body>
+</html>
