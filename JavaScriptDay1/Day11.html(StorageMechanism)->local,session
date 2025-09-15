@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    //Local Storage->stores data permanently.
+    //(until cleared by user or code).
+    //In Local Storage We Stores All Data As Strings.
+    localStorage.setItem("username","javascript");
+    localStorage.getItem("username");
+    localStorage.removeItem("username");//used to remove particularly one item.
+    localStorage.clear();//used to remove all item.
+    //storing array value in local storage:
+    //Local Storage only stores strings,not arrays.
+    //We need to convert arrays into a string (using JSON.stringify)-JSON->used to get the values from user(javascript object notation).
+    let arr=["maha",18,"fullstackdeveloper"]
+    localStorage.setItem("details",JSON.stringify(arr))
+    let stredarr=JSON.parse(localStorage.getItem("details"))
+    console.log(stredarr);
+    localStorage.clear();
+    //Storing an Array of Objects in Local Storage
+    let Subject=[{
+        "sub1":"Math",
+        "sub2":"Science"
+    }]
+    localStorage.setItem("subjectname",JSON.stringify(Subject));
+    let stredobj=JSON.parse(localStorage.getItem("subjectname"));
+    console.log(stredobj);
+    //Session Storage
+    //Useful for temporary data
+    //(like login session,form progress)
+    sessionStorage.setItem("fruits","apple");
+    sessionStorage.getItem("fruits");
+</script> 
+</body>
+</html>
