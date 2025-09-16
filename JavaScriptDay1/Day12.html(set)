@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Set
+        //Definition: A Set is a collection of unique values.It automatically removes duplicates.
+        //Syntax:
+        //let mySet=new Set([iterable]);
+        let email=new Set([])
+        email.add("js@gamil.com");
+        email.add("python@gmail.com");
+        email.add("java@gmail.com");
+        console.log(email);
+        //email.delete("java@gmail.com");
+        //console.log(email);
+        //email.clear();
+        //console.log(email);
+        //for of:
+        for(let mailId of email){
+            console.log(mailId);
+        }
+        email.forEach(x=>{
+            console.log(email)
+        })
+        //Role based access using set
+        let adminPermission=new Set(["read","write","delete"]);
+        let userPermission=new Set(["read"]);
+        function hasPermission(Role,Permission){
+            return Role.has(Permission)
+        } 
+        console.log(hasPermission(adminPermission,"delete"));//true
+        console.log(hasPermission(userPermission,"delete"));//false
+        //union,intersection,difference using sets
+        //Union:
+        let setA=new Set([1,2,3,4,5,1]);
+        let setB=new Set([6,7,8,9,2,10]);
+        let union=new Set([...setA,...setB])
+        console.log(union);
+        //Intersection:
+        let intersection=new Set([...setA].filter(x=>setB.has(x)));
+        console.log(intersection)
+        //Difference:
+        let difference=new Set([...setA].filter(x=>!setB.has(x)));
+        console.log(difference)
+        //Map
+        let user1={name:"JavaScript"};
+        let user2={name:"Python"};
+        //let map=new Map();
+        let map=new WeakMap();
+        map.set(user1,"Welcome");
+        map.set(user2,"Hai python");
+        console.log(map);
+        for(let message of map.values()){
+            console.log(message)
+        }
+
+</script>
+</body>
+</html>
