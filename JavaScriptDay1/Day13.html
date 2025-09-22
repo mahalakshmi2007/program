@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        try{
+            //code that may throw an error
+        }catch(erroe){
+            //code to handle the error
+        }finally{
+            //code that will always execute
+        }
+        try{
+            let atmpin=2345;
+            if(atmpin!=1235){
+                throw "incorrect pin";
+            }
+            console.log("logged in");
+        }
+        catch(error){
+            console.log(error);
+        }
+        finally{
+            console.log("executed sucessfully");
+        }
+        //JSON methods:parse(),stringify()
+        //parse()->converts string to object
+        //stringify()->converts object to string
+        //convert string to object:
+        let str='{"name":"js"}';
+        let strstred=JSON.parse(str);
+        console.log(strstred);
+        //convert object to string:
+        let obj={id:"1"};
+        let stredobj=JSON.stringify(obj);
+        console.log(stredobj);
+        //fetch() function:
+        //passing the URL of the JSON resource as the first argument.
+        //This returns a promise that resolves to a Response object.
+        //syntax for promises:
+        let sample=new Promise((resolve,reject)=>{
+            let workisdone=true;
+            if(workisdone){
+                console.log(("completed"))
+            }
+            else{
+                console.log(reject("notyet"))
+            }
+        })
+        fetch("Data.json")
+        .then(res=>res.json())
+        .then(Data=>{
+            for(let detail of Data.person){
+                console.log(detail)
+            }
+
+        })
+    </script>
+</body>
+</html>
+
+
+{
+    "person":[
+        {"id":"1","name":"js"},
+        {"id":"2","name":"java"}
+    ]
+}
